@@ -1,0 +1,1384 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/rotundasoftware/parcelify">parcelify (v2.2.0)</a>
+</h1>
+<h4>Create css bundles from npm packages using the browserify dependency graph.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parcelify">module parcelify</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package">
+            function <span class="apidocSignatureSpan">parcelify.</span>package
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.parcel">
+            function <span class="apidocSignatureSpan">parcelify.</span>parcel
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.super_">
+            function <span class="apidocSignatureSpan">parcelify.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parcelify.</span>package.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">parcelify.</span>parcel.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parcelify.package">module parcelify.package</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.package">
+            function <span class="apidocSignatureSpan">parcelify.</span>package
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.getOptionsFromPackageJson">
+            function <span class="apidocSignatureSpan">parcelify.package.</span>getOptionsFromPackageJson
+            <span class="apidocSignatureSpan">( packageId, packagePath, packageJson, assetTypes, appTransforms, appTransformDirs, callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.super_">
+            function <span class="apidocSignatureSpan">parcelify.package.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parcelify.package.prototype">module parcelify.package.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.prototype._createAssetGlobWatchers">
+            function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>_createAssetGlobWatchers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.prototype._createPackageJsonWatcher">
+            function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>_createPackageJsonWatcher
+            <span class="apidocSignatureSpan">( assetTypes, packageFilter, appTransforms, appTransformDirs )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.prototype._destroyAssetGlobWatchers">
+            function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>_destroyAssetGlobWatchers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.prototype._emitEventOnRelevantParcels">
+            function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>_emitEventOnRelevantParcels
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.prototype.addDependentParcel">
+            function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>addDependentParcel
+            <span class="apidocSignatureSpan">( parcel )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.prototype.addTransform">
+            function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>addTransform
+            <span class="apidocSignatureSpan">( transform, transformOptions, toAssetTypes, prepend )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.prototype.createAllAssets">
+            function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>createAllAssets
+            <span class="apidocSignatureSpan">( assetTypes )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.prototype.createAsset">
+            function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>createAsset
+            <span class="apidocSignatureSpan">( thisAssetSrcPath, assetType, appData )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.prototype.createWatchers">
+            function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>createWatchers
+            <span class="apidocSignatureSpan">( assetTypes, packageFilter, appTransforms, appTransformDirs )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.prototype.destroy">
+            function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.prototype.getAssets">
+            function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>getAssets
+            <span class="apidocSignatureSpan">( types )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.package.prototype.setDependencies">
+            function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>setDependencies
+            <span class="apidocSignatureSpan">( dependencies )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parcelify.parcel">module parcelify.parcel</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.parcel.parcel">
+            function <span class="apidocSignatureSpan">parcelify.</span>parcel
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.parcel.super_">
+            function <span class="apidocSignatureSpan">parcelify.parcel.</span>super_
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.parcelify.parcel.prototype">module parcelify.parcel.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.parcel.prototype.attachWatchListeners">
+            function <span class="apidocSignatureSpan">parcelify.parcel.prototype.</span>attachWatchListeners
+            <span class="apidocSignatureSpan">( bundles )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.parcel.prototype.calcParcelAssets">
+            function <span class="apidocSignatureSpan">parcelify.parcel.prototype.</span>calcParcelAssets
+            <span class="apidocSignatureSpan">( assetTypes )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.parcel.prototype.calcSortedDependencies">
+            function <span class="apidocSignatureSpan">parcelify.parcel.prototype.</span>calcSortedDependencies
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.parcelify.parcel.prototype.writeBundle">
+            function <span class="apidocSignatureSpan">parcelify.parcel.prototype.</span>writeBundle
+            <span class="apidocSignatureSpan">( assetType, dstPath, callback )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parcelify" id="apidoc.module.parcelify">module parcelify</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package" id="apidoc.element.parcelify.package">
+        function <span class="apidocSignatureSpan">parcelify.</span>package
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Package( options ) {
+
+	_.extend( this, _.pick( options,
+		'id',
+		'package',
+		'path',
+		'dependencies',
+		'assetSrcPathsByType',
+		'assetGlobsByType',
+		'assetTransformsByType'
+	) );
+
+	this.dependencies = [];
+	this.dependentParcels = [];
+	this.assetsByType = {};
+
+	EventEmitter.call( this );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.parcel" id="apidoc.element.parcelify.parcel">
+        function <span class="apidocSignatureSpan">parcelify.</span>parcel
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parcel( options ) {
+	var _this = this;
+
+	Package.call( this, options );
+
+	this.mainPath = options.mainPath;
+	this.isParcel = true;
+	this.bundlePathsByType = {};
+	this.parcelAssetsByType = {};
+
+	this.dependentParcels.push( this ); // parcels depend on themselves!
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.super_" id="apidoc.element.parcelify.super_">
+        function <span class="apidocSignatureSpan">parcelify.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parcelify.package" id="apidoc.module.parcelify.package">module parcelify.package</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.package" id="apidoc.element.parcelify.package.package">
+        function <span class="apidocSignatureSpan">parcelify.</span>package
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Package( options ) {
+
+	_.extend( this, _.pick( options,
+		'id',
+		'package',
+		'path',
+		'dependencies',
+		'assetSrcPathsByType',
+		'assetGlobsByType',
+		'assetTransformsByType'
+	) );
+
+	this.dependencies = [];
+	this.dependentParcels = [];
+	this.assetsByType = {};
+
+	EventEmitter.call( this );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.getOptionsFromPackageJson" id="apidoc.element.parcelify.package.getOptionsFromPackageJson">
+        function <span class="apidocSignatureSpan">parcelify.package.</span>getOptionsFromPackageJson
+        <span class="apidocSignatureSpan">( packageId, packagePath, packageJson, assetTypes, appTransforms, appTransformDirs, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOptionsFromPackageJson = function ( packageId, packagePath, packageJson, assetTypes, appTransforms, appTransformDirs, callback ) {
+	var packageOptions = {};
+
+	if( appTransforms ) {
+		var pkgIsInAppTransformsDir = _.find( appTransformDirs, function( thisAppDirPath ) {
+			var relPath = path.relative( thisAppDirPath, packagePath );
+			var needToBackup = relPath.charAt( 0 ) === '.' &amp;&amp; relPath.charAt( 1 ) === '.';
+			var appTransformsApplyToThisDir = ! needToBackup &amp;&amp; relPath.indexOf( 'node_modules' ) === -1;
+			return appTransformsApplyToThisDir;
+		} );
+
+		if( pkgIsInAppTransformsDir )
+			packageJson.transforms = appTransforms.concat( packageJson.transforms || [] );
+	}
+
+	packageOptions.package = packageJson;
+	packageOptions.id = packageId;
+	packageOptions.path = packagePath;
+
+	packageOptions.assetSrcPathsByType = {};
+	packageOptions.assetTransformsByType = {};
+	packageOptions.assetGlobsByType = {};
+
+	async.each( assetTypes, function( thisAssetType, nextAssetType ) {
+
+		async.parallel( [ function( nextParallel ) {
+			packageOptions.assetSrcPathsByType[ thisAssetType ] = [];
+
+			// resolve relative globs to absolute globs
+			var relativeGlobsOfThisType = packageJson[ thisAssetType ] || [];
+			if( _.isString( relativeGlobsOfThisType ) ) relativeGlobsOfThisType = [ relativeGlobsOfThisType ];
+			var absoluteGlobsOfThisType = relativeGlobsOfThisType.map( function( thisGlob ) { return path.resolve( packagePath, thisGlob ); } );
+			packageOptions.assetGlobsByType[ thisAssetType ] = absoluteGlobsOfThisType;
+
+			// resolve absolute globs to actual src files
+			async.map( absoluteGlobsOfThisType, glob,
+			function( err, arrayOfResolvedGlobs ) {
+				if( err ) return nextParallel( err );
+
+				var assetsOfThisType = _.flatten( arrayOfResolvedGlobs );
+				packageOptions.assetSrcPathsByType[ thisAssetType ] = assetsOfThisType;
+
+				nextParallel();
+			} );
+		}, function( nextParallel ) {
+			// resolve transform names to actual transform
+			packageOptions.assetTransformsByType[ thisAssetType ] = [];
+
+			if( packageJson.transforms ) {
+				if( _.isArray( packageJson.transforms ) )
+					transformNames = packageJson.transforms;
+				else
+					transformNames = packageJson.transforms[ thisAssetType ] || [];
+			}
+			else
+				transformNames = [];
+
+			async.map( transformNames, function( thisTransformName, nextTransform ) {
+				if( _.isFunction( thisTransformName ) ) return nextTransform( null, thisTransformName );
+
+				resolve( thisTransformName, { basedir : packageJson.__path }, function( err, modulePath ) {
+					if( err ) return nextTransform( err );
+
+					nextTransform( null, require( modulePath ) );
+				} );
+			}, function( err, transforms ) {
+				if( err ) return nextParallel( err );
+
+
+				packageOptions.assetTransformsByType[ thisAssetType ] = transforms;
+				nextParallel();
+			} );
+		} ], nextAssetType );
+	}, function( err ) {
+		if( err ) return callback( err );
+
+		callback( null, packageOptions );
+	} );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	async.series( [ function( nextSeries ) {
+		async.each( Object.keys( parcelMapResult.packages ), function( thisPackageId, nextPackageId ) {
+			var packageJson = parcelMapResult.packages[ thisPackageId ];
+			var packageOptions = {};
+
+			async.waterfall( [ function( nextWaterfall ) {
+				Package.<span class="apidocCodeKeywordSpan">getOptionsFromPackageJson</span>( thisPackageId, packageJson.__path, packageJson
+, assetTypes, appTransforms, appTransformDirs, nextWaterfall );
+			}, function( packageOptions, nextWaterfall ) {
+				var thisPackage;
+
+				var thisPackageIsAParcel = packageJson.__isParcel;
+
+				if( ! existingPacakages[ thisPackageId ] ) {
+					if( thisPackageIsAParcel ) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.super_" id="apidoc.element.parcelify.package.super_">
+        function <span class="apidocSignatureSpan">parcelify.package.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parcelify.package.prototype" id="apidoc.module.parcelify.package.prototype">module parcelify.package.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.prototype._createAssetGlobWatchers" id="apidoc.element.parcelify.package.prototype._createAssetGlobWatchers">
+        function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>_createAssetGlobWatchers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createAssetGlobWatchers = function () {
+	var _this = this;
+
+	this.assetGlobWatchers = [];
+
+	_.each( _this.assetGlobsByType, function( globs, thisAssetType ) {
+		var thisWatcher = globwatcher( globs );
+
+		thisWatcher.on( 'changed', function( srcPath ) {
+			try {
+				log.info( 'watch', '"%s" changed', path.relative( process.cwd(), srcPath ) );
+
+				var asset = _.findWhere( _this.assetsByType[ thisAssetType ], { srcPath : srcPath } );
+				if( ! asset ) return _this.emit( 'error', new Error( 'Couldn\'t find changed file ' + srcPath + ' in assets of type ' + thisAssetType
+ ) );
+
+				_this._emitEventOnRelevantParcels( 'assetUpdated', 'changed', asset, _this );
+			} catch( err ) {
+				return _this.emit( 'error', err );
+			}
+		} );
+
+		thisWatcher.on( 'added', function( srcPath ) {
+			try {
+				log.info( 'watch', '"%s" added', path.relative( process.cwd(), srcPath ) );
+			
+				var asset = _.findWhere( _this.assetsByType[ thisAssetType ], { srcPath : srcPath } );
+				// watching is weird... sometimes we get double events. make sure we don't add the same asset twice.
+				if( asset ) return _this.emit( 'error', new Error( 'Asset ' + srcPath + ' already exists in assets of type ' + thisAssetType
+ ) );
+				
+				asset = _this.createAsset( srcPath, thisAssetType );
+
+				_this._emitEventOnRelevantParcels( 'assetUpdated', 'added', asset, _this );
+			} catch( err ) {
+				return _this.emit( 'error', err );
+			}
+		} );
+
+		thisWatcher.on( 'deleted', function( srcPath ) {
+			try {
+				log.info( 'watch', '"%s" deleted', path.relative( process.cwd(), srcPath ) );
+
+				var asset = _.findWhere( _this.assetsByType[ thisAssetType ], { srcPath : srcPath } );
+				if( ! asset ) return _this.emit( 'error', new Error( 'Couldn\'t find changed file ' + srcPath + ' in assets of type ' + thisAssetType
+ ) );
+
+				_this.assetsByType[ thisAssetType ] = _.without( _this.assetsByType[ thisAssetType ], asset );
+			
+				_this._emitEventOnRelevantParcels( 'assetUpdated', 'deleted', asset, _this );
+			} catch( err ) {
+				return _this.emit( 'error', err );
+			}
+		} );
+
+		_this.assetGlobWatchers.push( thisWatcher );
+	} );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Package.prototype.addDependentParcel = function( parcel ) {
+	this.dependentParcels = _.union( this.dependentParcels, parcel );
+};
+
+Package.prototype.createWatchers = function( assetTypes, packageFilter, appTransforms, appTransformDirs ) {
+	this._createPackageJsonWatcher( assetTypes, packageFilter, appTransforms, appTransformDirs );
+	this.<span class="apidocCodeKeywordSpan">_createAssetGlobWatchers</span>();
+};
+
+Package.prototype.destroy = function() {
+	this._destroyAssetGlobWatchers();
+	this.assetJsonWatcher.close();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.prototype._createPackageJsonWatcher" id="apidoc.element.parcelify.package.prototype._createPackageJsonWatcher">
+        function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>_createPackageJsonWatcher
+        <span class="apidocSignatureSpan">( assetTypes, packageFilter, appTransforms, appTransformDirs )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createPackageJsonWatcher = function ( assetTypes, packageFilter, appTransforms, appTransformDirs ) {
+	var _this = this;
+
+	this.assetJsonWatcher = globwatcher( path.resolve( this.path, "package.json" ) );
+	this.assetJsonWatcher.on( 'changed', function( srcPath ) {
+		log.info( 'watch', 'package.json changed "%s"', path.relative( process.cwd(), srcPath ) );
+
+		fs.readFile( srcPath, 'utf8', function( err, packageJson ) {
+			if( err ) return _this.emit( 'error', err );
+
+			try {
+				packageJson = JSON.parse( packageJson );
+			} catch( err ) {
+				return _this.emit( 'error', new Error( 'While parsing "' + srcPath + '", ' + err ) );
+			}
+
+			packageJson.__path = _this.path;
+
+			if( packageFilter ) packageJson = packageFilter( packageJson, _this.path );
+
+			Package.getOptionsFromPackageJson( _this.id, _this.path, packageJson, assetTypes, appTransforms, appTransformDirs, function(
+err, options ) {
+				if( err ) return _this.emit( 'error', err );
+
+				_.extend( _this, options );
+
+				_this.createAllAssets( assetTypes );
+
+				_this._destroyAssetGlobWatchers();
+				_this._createAssetGlobWatchers();
+
+				_this._emitEventOnRelevantParcels( 'packageJsonUpdated', _this );
+			} );
+		} );
+	} );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Package.prototype.addDependentParcel = function( parcel ) {
+	this.dependentParcels = _.union( this.dependentParcels, parcel );
+};
+
+Package.prototype.createWatchers = function( assetTypes, packageFilter, appTransforms, appTransformDirs ) {
+	this.<span class="apidocCodeKeywordSpan">_createPackageJsonWatcher</span>( assetTypes, packageFilter, appTransforms, appTransformDirs
+ );
+	this._createAssetGlobWatchers();
+};
+
+Package.prototype.destroy = function() {
+	this._destroyAssetGlobWatchers();
+	this.assetJsonWatcher.close();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.prototype._destroyAssetGlobWatchers" id="apidoc.element.parcelify.package.prototype._destroyAssetGlobWatchers">
+        function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>_destroyAssetGlobWatchers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_destroyAssetGlobWatchers = function () {
+	this.assetGlobWatchers.forEach( function( thisAssetGlobWatcher ) {
+		thisAssetGlobWatcher.close();
+	} );
+
+	this.assetGlobWatchers = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Package.prototype.createWatchers = function( assetTypes, packageFilter, appTransforms, appTransformDirs ) {
+	this._createPackageJsonWatcher( assetTypes, packageFilter, appTransforms, appTransformDirs );
+	this._createAssetGlobWatchers();
+};
+
+Package.prototype.destroy = function() {
+	this.<span class="apidocCodeKeywordSpan">_destroyAssetGlobWatchers</span>();
+	this.assetJsonWatcher.close();
+};
+
+/********************* Private instance methods *********************/
+
+Package.prototype._createPackageJsonWatcher = function( assetTypes, packageFilter, appTransforms, appTransformDirs ) {
+	var _this = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.prototype._emitEventOnRelevantParcels" id="apidoc.element.parcelify.package.prototype._emitEventOnRelevantParcels">
+        function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>_emitEventOnRelevantParcels
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_emitEventOnRelevantParcels = function () {
+	var args = Array.prototype.slice.call( arguments );
+
+	this.dependentParcels.forEach( function( thisParcel ) {
+		thisParcel.emit.apply( thisParcel, args );
+	} );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				_.extend( _this, options );
+
+				_this.createAllAssets( assetTypes );
+
+				_this._destroyAssetGlobWatchers();
+				_this._createAssetGlobWatchers();
+
+				_this.<span class="apidocCodeKeywordSpan">_emitEventOnRelevantParcels</span>( 'packageJsonUpdated', _this );
+			} );
+		} );
+	} );
+};
+
+Package.prototype._createAssetGlobWatchers = function() {
+	var _this = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.prototype.addDependentParcel" id="apidoc.element.parcelify.package.prototype.addDependentParcel">
+        function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>addDependentParcel
+        <span class="apidocSignatureSpan">( parcel )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addDependentParcel = function ( parcel ) {
+	this.dependentParcels = _.union( this.dependentParcels, parcel );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+					oldPackage.destroy();
+
+					thisPackage = packagesThatWereCreated[ thisPackageId ] = new Parcel( packageOptions );
+					thisPackage.createAllAssets( assetTypes );
+
+					oldDependentParcels.forEach( function( thisDependentParcel ) {
+						thisPackage.<span class="apidocCodeKeywordSpan">addDependentParcel</span>( thisDependentParcel );
+						thisDependentParcel.calcSortedDependencies();
+						thisDependentParcel.calcParcelAssets( assetTypes );
+					} );
+
+					log.warn( '', 'Recreated package at ' + thisPackage.path + ' as Parcel.' );
+				} else
+					thisPackage = existingPacakages[ thisPackageId ];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.prototype.addTransform" id="apidoc.element.parcelify.package.prototype.addTransform">
+        function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>addTransform
+        <span class="apidocSignatureSpan">( transform, transformOptions, toAssetTypes, prepend )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addTransform = function ( transform, transformOptions, toAssetTypes, prepend ) {
+	if( _.isUndefined( prepend ) ) prepend = false;
+
+	var t = transformOptions ? function( file ) { return transform( file, transformOptions ); } : transform;
+
+	toAssetTypes = toAssetTypes || Object.keys( this.assetsByType );
+	if( ! _.isArray( toAssetTypes ) ) toAssetTypes = [ toAssetTypes ];
+
+	// add transform to existing assets
+	this.getAssets( toAssetTypes ).forEach( function( thisAsset ) {
+		thisAsset.addTransform( t, prepend );
+	} );
+
+	// and also add it to the package itself so it is added to assets created from this point forward
+	_.each( _.pick( this.assetTransformsByType, toAssetTypes ), function( transformsForThisAssetType ) {
+		if( prepend ) transformsForThisAssetType.unshift( t );
+		else transformsForThisAssetType.push( t );
+	} );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	var t = transformOptions ? function( file ) { return transform( file, transformOptions ); } : transform;
+
+	toAssetTypes = toAssetTypes || Object.keys( this.assetsByType );
+	if( ! _.isArray( toAssetTypes ) ) toAssetTypes = [ toAssetTypes ];
+
+	// add transform to existing assets
+	this.getAssets( toAssetTypes ).forEach( function( thisAsset ) {
+		thisAsset.<span class="apidocCodeKeywordSpan">addTransform</span>( t, prepend );
+	} );
+
+	// and also add it to the package itself so it is added to assets created from this point forward
+	_.each( _.pick( this.assetTransformsByType, toAssetTypes ), function( transformsForThisAssetType ) {
+		if( prepend ) transformsForThisAssetType.unshift( t );
+		else transformsForThisAssetType.push( t );
+	} );
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.prototype.createAllAssets" id="apidoc.element.parcelify.package.prototype.createAllAssets">
+        function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>createAllAssets
+        <span class="apidocSignatureSpan">( assetTypes )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createAllAssets = function ( assetTypes ) {
+	var _this = this;
+
+	_this.assetsByType = {};
+	assetTypes.forEach( function( thisAssetType ) { _this.assetsByType[ thisAssetType ] = []; } );
+
+	Object.keys( this.assetSrcPathsByType ).forEach( function( assetType ) {
+		_this.assetSrcPathsByType[ assetType ].forEach( function( thisAssetSrcPath ) {
+			var thisAsset = _this.createAsset( thisAssetSrcPath, assetType );
+		} );
+	} );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+				if( ! existingPacakages[ thisPackageId ] ) {
+					if( thisPackageIsAParcel ) {
+						thisPackage = packagesThatWereCreated[ thisPackageId ] = new Parcel( _.extend( packageOptions, { mainPath : packageJson.__mainPath
+ } ) );
+					}
+					else thisPackage = packagesThatWereCreated[ thisPackageId ] = new Package( packageOptions );
+
+					thisPackage.<span class="apidocCodeKeywordSpan">createAllAssets</span>( assetTypes );
+				}
+				else if( thisPackageIsAParcel &amp;&amp; ! existingPacakages[ thisPackageId ] instanceof Parcel ) {
+					// k tricky here.. if this package is a parcel, but it exists in the manifest as a plain
+					// old package, then we gotta recreate this package as a parcel. also we have to update
+					// any parcels that are dependENTS of this package/parcel in order to use the new
+					// assets that we are about to create. man, scary, hope nothing gets broke in the process.
+					// we could also pre-preemptively list out which packages are parcels by adding an option
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.prototype.createAsset" id="apidoc.element.parcelify.package.prototype.createAsset">
+        function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>createAsset
+        <span class="apidocSignatureSpan">( thisAssetSrcPath, assetType, appData )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createAsset = function ( thisAssetSrcPath, assetType, appData ) {
+	var thisAsset = new Asset( thisAssetSrcPath, assetType, _.clone( this.assetTransformsByType[ assetType ] ), appData );
+
+	log.verbose( '', assetType + ' asset registered "%s"', path.relative( process.cwd(), thisAssetSrcPath ) );
+
+	if( ! this.assetsByType[ assetType ] ) this.assetsByType[ assetType ] = [];
+	this.assetsByType[ assetType ].push( thisAsset );
+
+	return thisAsset;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	var _this = this;
+
+	_this.assetsByType = {};
+	assetTypes.forEach( function( thisAssetType ) { _this.assetsByType[ thisAssetType ] = []; } );
+
+	Object.keys( this.assetSrcPathsByType ).forEach( function( assetType ) {
+		_this.assetSrcPathsByType[ assetType ].forEach( function( thisAssetSrcPath ) {
+			var thisAsset = _this.<span class="apidocCodeKeywordSpan">createAsset</span>( thisAssetSrcPath, assetType );
+		} );
+	} );
+};
+
+Package.prototype.createAsset = function( thisAssetSrcPath, assetType, appData ) {
+	var thisAsset = new Asset( thisAssetSrcPath, assetType, _.clone( this.assetTransformsByType[ assetType ] ), appData );
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.prototype.createWatchers" id="apidoc.element.parcelify.package.prototype.createWatchers">
+        function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>createWatchers
+        <span class="apidocSignatureSpan">( assetTypes, packageFilter, appTransforms, appTransformDirs )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createWatchers = function ( assetTypes, packageFilter, appTransforms, appTransformDirs ) {
+	this._createPackageJsonWatcher( assetTypes, packageFilter, appTransforms, appTransformDirs );
+	this._createAssetGlobWatchers();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+						}, nextEach );
+					}, nextSeries );
+				}, function( nextSeries ) {
+					if( options.watch ) {
+						// we only create glob watchers for the packages that parcel added to the manifest. Again, we want to avoid doubling up
+						// work in situations where we have multiple parcelify instances running that share common bundles
+						_.each( packagesThatWereCreated, function( thisPackage ) {
+							thisPackage.<span class="apidocCodeKeywordSpan">createWatchers</span>( assetTypes, browserifyInstance._options.packageFilter
+, options.appTransforms, options.appTransformDirs );
+							if( thisPackage.isParcel ) {
+								thisPackage.attachWatchListeners( options.bundlesByEntryPoint[ thisPackage.mainPath ] );
+							}
+						} );
+					}
+
+					if( ! _this.watching ) _this.emit( 'done' );
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.prototype.destroy" id="apidoc.element.parcelify.package.prototype.destroy">
+        function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function () {
+	this._destroyAssetGlobWatchers();
+	this.assetJsonWatcher.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					// assets that we are about to create. man, scary, hope nothing gets broke in the process.
+					// we could also pre-preemptively list out which packages are parcels by adding an option
+					// to parcelify itself, but that seems a little weird. In the context of cartero that
+					// depends on the path of each package relative to the parcelDirs cartero option.
+					var oldPackage = existingPacakages[ thisPackageId ];
+					var oldDependentParcels = oldPackage.dependentParcels;
+
+					oldPackage.<span class="apidocCodeKeywordSpan">destroy</span>();
+
+					thisPackage = packagesThatWereCreated[ thisPackageId ] = new Parcel( packageOptions );
+					thisPackage.createAllAssets( assetTypes );
+
+					oldDependentParcels.forEach( function( thisDependentParcel ) {
+						thisPackage.addDependentParcel( thisDependentParcel );
+						thisDependentParcel.calcSortedDependencies();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.prototype.getAssets" id="apidoc.element.parcelify.package.prototype.getAssets">
+        function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>getAssets
+        <span class="apidocSignatureSpan">( types )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAssets = function ( types ) {
+	return _.reduce( this.assetsByType, function( memo, assetsOfThisType, thisAssetType ) {
+		if( types &amp;&amp; ! _.contains( types, thisAssetType ) ) return memo;
+
+		return memo.concat( assetsOfThisType );
+	}, [] );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	var t = transformOptions ? function( file ) { return transform( file, transformOptions ); } : transform;
+
+	toAssetTypes = toAssetTypes || Object.keys( this.assetsByType );
+	if( ! _.isArray( toAssetTypes ) ) toAssetTypes = [ toAssetTypes ];
+
+	// add transform to existing assets
+	this.<span class="apidocCodeKeywordSpan">getAssets</span>( toAssetTypes ).forEach( function( thisAsset ) {
+		thisAsset.addTransform( t, prepend );
+	} );
+
+	// and also add it to the package itself so it is added to assets created from this point forward
+	_.each( _.pick( this.assetTransformsByType, toAssetTypes ), function( transformsForThisAssetType ) {
+		if( prepend ) transformsForThisAssetType.unshift( t );
+		else transformsForThisAssetType.push( t );
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.package.prototype.setDependencies" id="apidoc.element.parcelify.package.prototype.setDependencies">
+        function <span class="apidocSignatureSpan">parcelify.package.prototype.</span>setDependencies
+        <span class="apidocSignatureSpan">( dependencies )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDependencies = function ( dependencies ) {
+	this.dependencies = dependencies;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		// now that we have all our packages instantiated, hook up dependencies
+		_.each( parcelMapResult.dependencies, function( dependencyIds, thisPackageId ) {
+			var thisPackage = allPackages[ thisPackageId ];
+
+			if( ! thisPackage ) return nextSeries( new Error( 'Unknown package id in dependency ' + thisPackageId ) );
+
+			var thisPackageDependencies = _.map( dependencyIds, function( thisDependencyId ) { return allPackages[ thisDependencyId ]; } );
+			thisPackage.<span class="apidocCodeKeywordSpan">setDependencies</span>( thisPackageDependencies );
+		} );
+
+		// finally, we can calculate the topo sort of any parcels that were created
+		_.each( packagesThatWereCreated, function( thisParcel ) {
+			if( thisParcel.isParcel ) {
+				thisParcel.calcSortedDependencies();
+				thisParcel.calcParcelAssets( assetTypes );
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parcelify.parcel" id="apidoc.module.parcelify.parcel">module parcelify.parcel</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.parcel.parcel" id="apidoc.element.parcelify.parcel.parcel">
+        function <span class="apidocSignatureSpan">parcelify.</span>parcel
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parcel( options ) {
+	var _this = this;
+
+	Package.call( this, options );
+
+	this.mainPath = options.mainPath;
+	this.isParcel = true;
+	this.bundlePathsByType = {};
+	this.parcelAssetsByType = {};
+
+	this.dependentParcels.push( this ); // parcels depend on themselves!
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.parcel.super_" id="apidoc.element.parcelify.parcel.super_">
+        function <span class="apidocSignatureSpan">parcelify.parcel.</span>super_
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Package( options ) {
+
+	_.extend( this, _.pick( options,
+		'id',
+		'package',
+		'path',
+		'dependencies',
+		'assetSrcPathsByType',
+		'assetGlobsByType',
+		'assetTransformsByType'
+	) );
+
+	this.dependencies = [];
+	this.dependentParcels = [];
+	this.assetsByType = {};
+
+	EventEmitter.call( this );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.parcelify.parcel.prototype" id="apidoc.module.parcelify.parcel.prototype">module parcelify.parcel.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.parcel.prototype.attachWatchListeners" id="apidoc.element.parcelify.parcel.prototype.attachWatchListeners">
+        function <span class="apidocSignatureSpan">parcelify.parcel.prototype.</span>attachWatchListeners
+        <span class="apidocSignatureSpan">( bundles )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attachWatchListeners = function ( bundles ) {
+	var _this = this;
+
+	this.on( 'assetUpdated', function( eventType, asset ) {
+		if( _.contains( [ 'added', 'deleted' ], eventType ) )
+			this.calcParcelAssets( [ asset.type ] );
+
+		if( bundles[ asset.type ] ) {
+			_this.writeBundle( asset.type, bundles[ asset.type ], function( err, bundleWasWritten ) {
+				if( err ) return _this.emit( 'error', err );
+
+				if( bundleWasWritten ) _this.emit( 'bundleUpdated', bundles[ asset.type ], asset.type );
+				// ... done!
+			} );
+		}
+	} );
+
+	this.on( 'packageJsonUpdated', function( thePackage ) {
+		var bundlesToRewrite = _.pick( bundles, _.without( Object.keys( bundles ), 'script' ) );
+		this.calcParcelAssets( Object.keys( bundlesToRewrite ) );
+
+		async.each( Object.keys( bundlesToRewrite ), function( thisAssetType, nextEach ) {
+			var thisBundlePath = bundlesToRewrite[ thisAssetType ];
+			if( ! thisBundlePath ) return nextEach();
+		
+			_this.writeBundle( thisAssetType, thisBundlePath, function( err, bundleWasWritten ) {
+				// don't stop writing other bundles if there was an error on this one. errors happen
+				// frequently with transforms.. like invalid scss, etc. don't stop the show, just
+				// keep going with our other bundles.
+
+				if( err ) _this.emit( 'error', err );
+				else if( bundleWasWritten ) _this.emit( 'bundleWritten', thisBundlePath, thisAssetType, true );
+
+				nextEach();
+			} );
+		}, function( err ) {
+			if( err ) _this.emit( 'error', err );
+
+			 // done );
+		} );
+	} );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				}, function( nextSeries ) {
+					if( options.watch ) {
+						// we only create glob watchers for the packages that parcel added to the manifest. Again, we want to avoid doubling up
+						// work in situations where we have multiple parcelify instances running that share common bundles
+						_.each( packagesThatWereCreated, function( thisPackage ) {
+							thisPackage.createWatchers( assetTypes, browserifyInstance._options.packageFilter, options.appTransforms, options.appTransformDirs
+ );
+							if( thisPackage.isParcel ) {
+								thisPackage.<span class="apidocCodeKeywordSpan">attachWatchListeners</span>( options.bundlesByEntryPoint[ thisPackage.mainPath
+ ] );
+							}
+						} );
+					}
+
+					if( ! _this.watching ) _this.emit( 'done' );
+
+					nextSeries();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.parcel.prototype.calcParcelAssets" id="apidoc.element.parcelify.parcel.prototype.calcParcelAssets">
+        function <span class="apidocSignatureSpan">parcelify.parcel.prototype.</span>calcParcelAssets
+        <span class="apidocSignatureSpan">( assetTypes )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calcParcelAssets = function ( assetTypes ) {
+	memo = {};
+	assetTypes.forEach( function( thisAssetType ) { memo[ thisAssetType ] = []; } );
+
+	var sortedAssets = this.sortedDependencies.concat( this ).reduce( function( memo, thisPackage ) {
+		var thisPackageAssets = thisPackage.assetsByType;
+
+		_.each( thisPackageAssets, function( assets, thisAssetType ) {
+			if( _.contains( assetTypes, thisAssetType ) )
+				memo[ thisAssetType ] = memo[ thisAssetType ].concat( assets );
+		} );
+
+		return memo;
+	}, memo );
+
+	this.parcelAssetsByType = _.extend( {}, this.parcelAssetsByType, sortedAssets );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+					thisPackage = packagesThatWereCreated[ thisPackageId ] = new Parcel( packageOptions );
+					thisPackage.createAllAssets( assetTypes );
+
+					oldDependentParcels.forEach( function( thisDependentParcel ) {
+						thisPackage.addDependentParcel( thisDependentParcel );
+						thisDependentParcel.calcSortedDependencies();
+						thisDependentParcel.<span class="apidocCodeKeywordSpan">calcParcelAssets</span>( assetTypes );
+					} );
+
+					log.warn( '', 'Recreated package at ' + thisPackage.path + ' as Parcel.' );
+				} else
+					thisPackage = existingPacakages[ thisPackageId ];
+
+				nextWaterfall();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.parcel.prototype.calcSortedDependencies" id="apidoc.element.parcelify.parcel.prototype.calcSortedDependencies">
+        function <span class="apidocSignatureSpan">parcelify.parcel.prototype.</span>calcSortedDependencies
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calcSortedDependencies = function () {
+	var packagesWithDependencies = [];
+
+	function getEdgesForPackageDependencyGraph( thisPackage, thisTreeLevel, packageTreeLevels ) {
+		if( _.isUndefined( thisTreeLevel ) ) thisTreeLevel = 0;
+		if( _.isUndefined( packageTreeLevels ) ) packageTreeLevels = {};
+
+		if( ! packageTreeLevels[ thisPackage.path ] ) packageTreeLevels[ thisPackage.path ] = thisTreeLevel;
+
+		return thisPackage.dependencies.reduce( function( memo, thisDependentPackage ) {
+			// these conditionals are to avoid cycles and infinite recursion.
+			// first, we only traverse each node once to avoid infinite recursion.
+			if( _.isUndefined( packageTreeLevels[ thisDependentPackage.path ] ) ) {
+				memo = memo.concat( getEdgesForPackageDependencyGraph( thisDependentPackage, thisTreeLevel + 1, packageTreeLevels ) );
+			}
+
+			// second, we keep track of the levels of the nodes in the dependency tree (where
+			// level 0 is the root node i.e. the parcel itself). nodes can only have dependencies
+			// on other nodes with a level equal to or greater than their own. done.
+			if( packageTreeLevels[ thisDependentPackage.path ] &gt;= packageTreeLevels[ thisPackage.path ] ) {
+				memo = memo.concat( [ [ thisPackage, thisDependentPackage ] ] );
+			}
+
+			return memo;
+		}, [] );
+	}
+
+	var edges = getEdgesForPackageDependencyGraph( this );
+	var sortedPackages = toposort( edges ).reverse();
+
+	//sortedPackages = _.union( sortedPackages, Object.keys( packageManifest ) ); // union cuz some packages have no dependencies!
+	sortedPackages = _.without( sortedPackages, this );
+
+	this.sortedDependencies = sortedPackages;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					oldPackage.destroy();
+
+					thisPackage = packagesThatWereCreated[ thisPackageId ] = new Parcel( packageOptions );
+					thisPackage.createAllAssets( assetTypes );
+
+					oldDependentParcels.forEach( function( thisDependentParcel ) {
+						thisPackage.addDependentParcel( thisDependentParcel );
+						thisDependentParcel.<span class="apidocCodeKeywordSpan">calcSortedDependencies</span>();
+						thisDependentParcel.calcParcelAssets( assetTypes );
+					} );
+
+					log.warn( '', 'Recreated package at ' + thisPackage.path + ' as Parcel.' );
+				} else
+					thisPackage = existingPacakages[ thisPackageId ];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.parcelify.parcel.prototype.writeBundle" id="apidoc.element.parcelify.parcel.prototype.writeBundle">
+        function <span class="apidocSignatureSpan">parcelify.parcel.prototype.</span>writeBundle
+        <span class="apidocSignatureSpan">( assetType, dstPath, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeBundle = function ( assetType, dstPath, callback ) {
+	var _this = this;
+		
+	var srcAssets = _this.parcelAssetsByType[ assetType ];
+	if( ! srcAssets || srcAssets.length === 0 ) return callback( null, false ); // we don't want to create an empty bundle just because
+ we have no source files
+
+	var bundle = through2();
+	var tempBundlePath = path.join( path.dirname( dstPath ), '.temp_' + path.basename( dstPath ) );
+
+	bundle.pipe( fs.createWriteStream( dstPath ) ).on( 'close', function ( err ) {
+		// execution resumes here after all the individual asset streams
+		// have been piped to this bundle. we need to pipe the bundle to the writable
+		// stream first (before individual assets are piped to bundle stream)
+		// so that if the high water mark is reached on one of the readable streams
+		// it doesn't pause (with no way to resume). See github issue #15.
+		
+		if( err ) return callback( err, false );
+
+		// fs.rename( tempBundlePath, dstPath, function( err ) {
+		// 	if( err ) console.log( 'yoyoyoo', fs.existsSync( tempBundlePath ), dstPath, srcAssets );
+
+		// 	if( err ) return callback( err );
+
+			//_this.bundlePathsByType[ assetType ] = dstPath; // don't do this. isn't really a property of the parcel so much as an input
+ to parcelify
+
+			callback( null, true );
+		// } );
+	} );
+
+	// pipe all our individual style streams to the bundle in order to concatenate them
+	async.eachSeries( srcAssets, function( thisAsset, nextAsset ) {
+		var thisAssetStream = thisAsset.createReadStream();
+
+		thisAssetStream.on( 'error', function( err ) {
+			nextAsset( new Error( 'While reading or transforming "' + thisAsset.srcPath + '":\n' + err.message ) );
+		} );
+
+		thisAssetStream.on( 'end', function( err ) {
+			nextAsset();
+		} );
+
+		thisAssetStream.pipe( bundle, { end : false } );
+	}, function( err ) {
+		if( err ) return callback( err, false );
+
+		bundle.end();
+		
+		// execution will resume up above on the
+		// `close` event handler for our bundle
+	} );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+						var thisParcelBundles = options.bundlesByEntryPoint[ thisParcel.mainPath ];
+					
+						async.each( Object.keys( thisParcelBundles ), function( thisAssetType, nextEach ) {
+							var thisBundlePath = thisParcelBundles[ thisAssetType ];
+							if( ! thisBundlePath ) return nextEach();
+
+							thisParcel.<span class="apidocCodeKeywordSpan">writeBundle</span>( thisAssetType, thisBundlePath, function( err, bundleWasWritten
+ ) {
+								// don't stop writing other bundles if there was an error on this one. errors happen
+								// frequently with transforms.. like invalid scss, etc. don't stop the show, just
+								// keep going with our other bundles.
+
+								if( err ) _this.emit( 'error', err );
+								else if( bundleWasWritten ) _this.emit( 'bundleWritten', thisBundlePath, thisAssetType, thisParcel, _this.watching
+ );
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
