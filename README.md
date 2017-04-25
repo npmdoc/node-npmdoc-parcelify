@@ -1,4 +1,7 @@
-# api documentation for  [parcelify (v2.2.0)](https://github.com/rotundasoftware/parcelify)  [![npm package](https://img.shields.io/npm/v/npmdoc-parcelify.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-parcelify) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-parcelify.svg)](https://travis-ci.org/npmdoc/node-npmdoc-parcelify)
+# npmdoc-parcelify
+
+#### basic api documentation for  [parcelify (v2.2.0)](https://github.com/rotundasoftware/parcelify)  [![npm package](https://img.shields.io/npm/v/npmdoc-parcelify.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-parcelify) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-parcelify.svg)](https://travis-ci.org/npmdoc/node-npmdoc-parcelify)
+
 #### Create css bundles from npm packages using the browserify dependency graph.
 
 [![NPM](https://nodei.co/npm/parcelify.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/parcelify)
